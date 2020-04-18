@@ -1,6 +1,6 @@
 name: show_hide_fab
 description: A flutter package that provides easy methods to show and hide a FAB attached to a Scaffold.
-version: 0.0.1
+version: 0.1.0
 author: Akora Ing. DKB<akoraingdkb@gmail.com>
 homepage: https://github.com/Akora-IngDKB/show_hide_fab.git
 
