@@ -17,7 +17,7 @@ class ShowHideFAB extends StatelessWidget {
   final Curve hideCurve;
 
   /// boolean to toggle show/hide [fab]
-  bool shouldShow;
+  final bool shouldShow;
 
   /// Creates a [ShowHideFAB] widget.
   ///
