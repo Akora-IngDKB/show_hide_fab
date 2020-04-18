@@ -27,7 +27,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   bool show = true;
-  String text = 'HIDE FAB';
 
   @override
   Widget build(BuildContext context) {
@@ -40,16 +39,18 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: () {
             setState(() {
               show = !show;
-              text = 'SHOW FAB';
             });
           },
           color: Colors.green,
-          child: Text(text),
+          child: Text(
+            show ? 'HIDE FAB' : 'SHOW FAB',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
       ),
       floatingActionButton: ShowHideFAB(
         shouldShow: show,
-        animationDuration: Duration(milliseconds: 500),
+        animationDuration: Duration(milliseconds: 250),
         fab: FloatingActionButton(
           backgroundColor: Colors.green,
           child: Icon(Icons.add, color: Colors.white),
