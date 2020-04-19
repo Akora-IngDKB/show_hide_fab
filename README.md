@@ -1,4 +1,4 @@
-# show_hide_fab
+# show_hide_fab [![Pub](https://img.shields.io/pub/v/show_hide_fab.svg)](https://pub.dev/packages/show_hide_fab)
 
 A flutter package that provides easy methods to show and hide a FAB attached to a Scaffold.
 <p align="center">  
