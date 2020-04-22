@@ -1,13 +1,31 @@
-// import 'package:flutter_test/flutter_test.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_test/flutter_test.dart';
 
-// import 'package:show_hide_fab/show_hide_fab.dart';
+import '../example/lib/main.dart';
 
-// void main() {
-//   test('adds one to input values', () {
-//     final calculator = Calculator();
-//     expect(calculator.addOne(2), 3);
-//     expect(calculator.addOne(-7), -6);
-//     expect(calculator.addOne(0), 1);
-//     expect(() => calculator.addOne(null), throwsNoSuchMethodError);
-//   });
-// }
+void main() {
+  testWidgets('Show/Hide FAB on button click', (WidgetTester tester) async {
+    // Build the widget
+    await tester.pumpWidget(MyApp());
+
+    // Tap the button to Hide the FAB
+    await tester.tap(find.byType(RaisedButton));
+
+    // Rebuild the widget with the new item.
+    await tester.pumpAndSettle();
+
+    // Expect not to find the FAB
+    expect(find.byType(FloatingActionButton), findsNothing);
+
+    await tester.pumpAndSettle();
+
+    // Tap the button to Show the FAB
+    await tester.tap(find.byType(RaisedButton));
+
+    // Rebuild the widget with the new item.
+    await tester.pumpAndSettle();
+
+    // Expect not to find the FAB
+    expect(find.byType(FloatingActionButton), findsOneWidget);
+  });
+}
