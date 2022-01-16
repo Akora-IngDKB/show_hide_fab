@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:show_hide_fab/show_hide_fab.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -11,7 +13,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: MyHomePage(title: 'ShowHideFAB Demo'),
+      home: const MyHomePage(title: 'ShowHideFAB Demo'),
     );
   }
 }
@@ -19,7 +21,7 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatefulWidget {
   final String title;
 
-  MyHomePage({this.title});
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -35,25 +37,25 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: Center(
-        child: RaisedButton(
+        child: ElevatedButton(
           onPressed: () {
             setState(() {
               show = !show;
             });
           },
-          color: Colors.green,
+          style: ElevatedButton.styleFrom(primary: Colors.green),
           child: Text(
             show ? 'HIDE FAB' : 'SHOW FAB',
-            style: TextStyle(color: Colors.white),
+            style: const TextStyle(color: Colors.white),
           ),
         ),
       ),
       floatingActionButton: ShowHideFAB(
         shouldShow: show,
-        animationDuration: Duration(milliseconds: 250),
+        animationDuration: const Duration(milliseconds: 250),
         fab: FloatingActionButton(
           backgroundColor: Colors.green,
-          child: Icon(Icons.add, color: Colors.white),
+          child: const Icon(Icons.add, color: Colors.white),
           onPressed: () {},
         ),
       ),

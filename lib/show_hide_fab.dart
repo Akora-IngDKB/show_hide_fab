@@ -23,15 +23,14 @@ class ShowHideFAB extends StatelessWidget {
   ///
   /// [fab] parameter must not be null.
   /// [shouldShow] parameter toggles the [fab] (true/false => show/hide).
-  ShowHideFAB({
-    Key key,
-    @required this.fab,
+  const ShowHideFAB({
+    Key? key,
+    required this.fab,
     this.animationDuration = kThemeAnimationDuration,
     this.showCurve = Curves.linear,
     this.hideCurve = Curves.linear,
     this.shouldShow = true,
-  })  : assert(fab != null, 'fab cannot be null'),
-        super(key: key);
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +38,7 @@ class ShowHideFAB extends StatelessWidget {
       duration: animationDuration,
       switchInCurve: showCurve,
       switchOutCurve: hideCurve,
-      child: shouldShow ? fab : Offstage(),
+      child: shouldShow ? fab : const Offstage(),
       transitionBuilder: (child, animation) {
         return ScaleTransition(
           scale: animation,
