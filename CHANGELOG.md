@@ -1,3 +1,6 @@
+## [1.0.0] - 2022-01-16
+* Migrate to null-safety
+
 ## [0.1.1] - 2020-04-18
 * Added widget test
 
